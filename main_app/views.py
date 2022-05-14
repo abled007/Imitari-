@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from .models import Post
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from .forms import ImageForm
 from django.views.generic import DetailView
+from django.urls import reverse
 
 # Create your views here.
 
@@ -14,11 +15,19 @@ class PostDetail(DetailView):
     model = Post
     template_name = 'post_detail.html'
 
+class PostUpdate(UpdateView):
+    model = Post
+    fields = '__all__'
+    template_name = "post_update.html"
+    def get_success_url(self):
+        return reverse('post_detail', kwargs={'pk': self.object.pk})
+
 class PostCreate(CreateView):
     model = Post
     fields = '__all__'
     template_name = "post_create.html"
-    success_url = "/posts"
+    def get_success_url(self):
+        return reverse('post_detail', kwargs={'pk': self.object.pk})  
 
 def image_upload_view(request):
     """Process images uploaded by users"""
