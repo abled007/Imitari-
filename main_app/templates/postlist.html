@@ -12,8 +12,9 @@
 
 <h1>Post</h1>
 {% for post in posts %}
-<img src="{{post.img}}">
-<h3>{{post.title}}</h3>
-<h6>{{post.caption}}</h6>
+    <a href="{% url 'post_detail' post.pk %}" >
+        <img src="{{post.img}}" />
+    </a>
+    <h6>{{post.title}}</h6>
 {% endfor %}
 {% endblock %}

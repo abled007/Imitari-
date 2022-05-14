@@ -3,10 +3,16 @@ from django.views.generic.base import TemplateView
 from .models import Post
 from django.views.generic.edit import CreateView
 from .forms import ImageForm
+from django.views.generic import DetailView
+
 # Create your views here.
 
 class Home(TemplateView):
     template_name = 'home.html'
+
+class PostDetail(DetailView):
+    model = Post
+    template_name = 'post_detail.html'
 
 class PostCreate(CreateView):
     model = Post
