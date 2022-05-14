@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from .models import Post
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .forms import ImageForm
 from django.views.generic import DetailView
 from django.urls import reverse
@@ -14,6 +14,11 @@ class Home(TemplateView):
 class PostDetail(DetailView):
     model = Post
     template_name = 'post_detail.html'
+
+class PostDelete(DeleteView):
+    model = Post
+    template_name = "post_delete_confirm.html"
+    success_url = "/posts"
 
 class PostUpdate(UpdateView):
     model = Post

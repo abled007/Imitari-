@@ -12,7 +12,7 @@
 </div>
 <div>
     <a href="{% url 'post_update' post.pk %}">Update</a>
-    <a href=""></a>
+    <a href="{% url 'post_delete' post.pk %}">Delete</a>
 </div>
 
 {% endblock %}
