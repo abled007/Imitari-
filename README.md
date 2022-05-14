@@ -31,7 +31,6 @@ A social media app that lets you share your images and creativity. The user is a
     - CSS
     - Django
     - HTML
-    - React
 
 
 ## Icebox
