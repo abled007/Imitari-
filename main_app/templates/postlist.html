@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<form>
+    <div>
+        <input type="text" name="name" placeholder="name"/>
+        <input type="submit" value="Search"/>
+    </div>
+    <a href="{% url 'post_list' %}">Clear Search</a>
+</form>
+<h1>Post</h1>
+{% for post in posts %}
+<img src="{{post.img}}">
+<h3>{{post.title}}</h3>
+<h6>{{post.caption}}</h6>
+{% endfor %}
+{% endblock %}
