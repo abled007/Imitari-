@@ -5,6 +5,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .forms import ImageForm
 from django.views.generic import DetailView
 from django.urls import reverse
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 
@@ -32,7 +33,13 @@ class PostCreate(CreateView):
     fields = '__all__'
     template_name = "post_create.html"
     def get_success_url(self):
-        return reverse('post_detail', kwargs={'pk': self.object.pk})  
+        return reverse('post_detail', kwargs={'pk': self.object.pk}) 
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return HttpResponseRedirect('/posts') 
 
 def image_upload_view(request):
     """Process images uploaded by users"""
