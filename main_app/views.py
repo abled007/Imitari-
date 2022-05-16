@@ -36,6 +36,12 @@ class AlbumCreate(CreateView):
     template_name = "album_form.html"
     success_url = '/albums'
 
+class AlbumUpdate(UpdateView):
+    model = Album
+    fields = '__all__'
+    template_name = "album_update.html"
+    success_url = '/albums'
+
 def profile(request, username):
     user = User.objects.get(username=username)
     posts = Post.objects.filter(user=user)

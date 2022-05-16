@@ -8,7 +8,7 @@
         <span>{{ album.title }}</span>
     </div>
     <div>
-        <a href="">Edit</a>
+        <a href="{% url 'albums_update' album.id %}">Edit</a>
         <a href="">Delete</a>
     </div>
 </div>
