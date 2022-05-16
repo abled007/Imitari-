@@ -13,6 +13,10 @@ class Post(models.Model):
 
 class Album(models.Model):
     title = models.CharField(max_length=120)
+    posts = models.ManyToManyField(Post)
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering = ['title']

@@ -6,6 +6,12 @@
 <div>
     <div>
         <span>{{ album.title }}</span>
+        {% for post in album.post_set.all %}
+        <img src="{{post.img.url}}" />
+        <p>{{post.title}}</p>
+    {% empty %}
+        <p>No images</p>
+    {% endfor %}
     </div>
     <div>
         <a href="{% url 'albums_update' album.id %}">Edit</a>
