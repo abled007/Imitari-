@@ -26,6 +26,10 @@ def albums_index(request):
     albums = Album.objects.all()
     return render(request, 'albums_index.html', {'albums': albums})
 
+def albums_show(request, album_id):
+    album = Album.objects.get(id=album_id)
+    return render(request, 'album_show.html', {'album': album})
+
 def profile(request, username):
     user = User.objects.get(username=username)
     posts = Post.objects.filter(user=user)
