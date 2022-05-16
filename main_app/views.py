@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
-from .models import Post
+from .models import Post, Album
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .forms import ImageForm
 from django.views.generic import DetailView
@@ -21,6 +21,10 @@ class PostDelete(DeleteView):
     model = Post
     template_name = "post_delete_confirm.html"
     success_url = "/posts"
+
+def albums_index(request):
+    albums = Album.objects.all()
+    return render(request, 'albums_index.html', {'albums': albums})
 
 def profile(request, username):
     user = User.objects.get(username=username)

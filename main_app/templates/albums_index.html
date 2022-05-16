@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Albums</h1>
+
+{% for album in albums %}
+    <div>
+        <a href="{% url 'albums_show' album.id %}">
+            <div class="card-content">
+                <span>{{ album.title }}</span>
+            </div>
+        </a>
+    </div>
+{% endfor %}
+
+{% endblock %}

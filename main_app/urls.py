@@ -11,4 +11,5 @@ urlpatterns = [
     path('posts/<int:pk>delete', views.PostDelete.as_view(), name="post_delete"),
     # path('accounts/signup/', views.singup_view, name="signup"),
     path('user/<username>/', views.profile, name='profile'),
+    path('album/', views.albums_index, name='albums_index'),
 ]
