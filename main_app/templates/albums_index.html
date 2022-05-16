@@ -2,6 +2,7 @@
 {% block content %}
 
 <h1>Albums</h1>
+<a href="{% url 'albums_create' %}">add post</a>
 
 {% for album in albums %}
     <div>

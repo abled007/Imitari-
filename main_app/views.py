@@ -42,6 +42,11 @@ class AlbumUpdate(UpdateView):
     template_name = "album_update.html"
     success_url = '/albums'
 
+class AlbumDelete(DeleteView):
+    model = Album
+    template_name = "album_confirm_delete.html"
+    success_url = '/albums'
+
 def profile(request, username):
     user = User.objects.get(username=username)
     posts = Post.objects.filter(user=user)
