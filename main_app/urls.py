@@ -13,4 +13,6 @@ urlpatterns = [
     path('user/<username>/', views.profile, name='profile'),
     path('albums/', views.albums_index, name='albums_index'),
     path('albums/<int:album_id>', views.albums_show, name='albums_show'),
+    path('albums/create/', views.AlbumCreate.as_view(), name='albums_create'),
+
 ]

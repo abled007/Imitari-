@@ -30,6 +30,12 @@ def albums_show(request, album_id):
     album = Album.objects.get(id=album_id)
     return render(request, 'album_show.html', {'album': album})
 
+class AlbumCreate(CreateView):
+    model = Album
+    fields = '__all__'
+    template_name = "album_form.html"
+    success_url = '/albums'
+
 def profile(request, username):
     user = User.objects.get(username=username)
     posts = Post.objects.filter(user=user)
