@@ -1,17 +1,24 @@
 body {
-    padding: 25px;
     background-color: black;
     color: white;
     font-size: 25px;
   }
   
-  .search {
-      opacity: 0.2;
-  }
-
   a {
       text-decoration: none;
-  }
+    }
+    
+    nav {
+        overflow: hidden;
+        width: 100%;
+        column-count: 3;
+        gap: 10px;
+    }
+
+    .search {
+        opacity: 0.2;
+        font-size: 12px;
+    }
 
   .gg-arrow-left-r {
     box-sizing: border-box;
@@ -82,7 +89,45 @@ body {
     border-top-right-radius: 3px;
     top: 9px
    } 
-
-   .fixed-bottom {
-       background: red;
+   
+   .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    height: 65px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
    }
+
+   
+   .gg-math-plus,
+   .gg-math-plus::after {
+       display: block;
+       box-sizing: border-box;
+       background: currentColor;
+       border-radius: 10px
+    }
+    
+    .gg-math-plus {
+        margin-top: -2px;
+        position: relative;
+        transform: scale(var(--ggs,1));
+        width: 16px;
+        height: 2px
+    }
+    
+    .gg-math-plus::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 16px;
+        top: -7px;
+        left: 7px
+    } 
+
+
+    @media screen and (min-width: 600px) {
+        .nav-bottom {
+        display: none;
+        }
+      }

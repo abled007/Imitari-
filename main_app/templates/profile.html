@@ -6,7 +6,7 @@
 
 {% for post in posts %}
 <a href="/posts/{{ post.id }}">
-  <h3>{{ post.title }}</h3>
+  <img src="{{post.img.url}}" />
 </a>
 
 {% endfor %}
