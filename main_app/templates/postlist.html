@@ -2,24 +2,26 @@
 {% block content %}
 <nav>
     <form>
+        <a class="gg-arrow-left-r" href="{% url 'post_list' %}"></a>
         <div class="search">
             <input type="text" name="title" placeholder="search"/>
         </div>
-        <a href="{% url 'post_list' %}">back</a>
+        <a href='/user/{{post.user.username}}'>profile</a>
     </form>
 </nav>
 
-<a href="{% url 'post_create' %}">add post</a>
+
 
 <h1>Post</h1>
 {% for post in posts %}
-    <a href="{% url 'post_detail' post.pk %}" >
-        <img src="{{post.img.url}}" />
-    </a>
-    <h6>{{post.title}}</h6>
-    <a href='/user/{{post.user.username}}'>{{post.user.username}}</a>
+<a href="{% url 'post_detail' post.pk %}" >
+    <img src="{{post.img.url}}" />
+</a>
+<h6>{{post.title}}</h6>
+<a href='/user/{{post.user.username}}'>{{post.user.username}}</a>
 {% endfor %}
 
 
+<a href="{% url 'post_create' %}">add post</a>
 
 {% endblock %}
