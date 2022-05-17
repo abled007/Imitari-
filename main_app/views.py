@@ -29,6 +29,8 @@ def signup_view(request):
         form = UserCreationForm()
         return render(request, 'signup.html', {'form': form})
 
+
+
 class PostDetail(DetailView):
     model = Post
     template_name = 'post_detail.html'

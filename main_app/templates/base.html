@@ -10,7 +10,6 @@
     <title>Imitari</title>
 </head>
 <body>
-    {% block content %}
     {% if user.is_authenticated %}
     <span><a href="{% url 'profile' user.username %}">Hello, {{ user.username }}!</a></span>
     <span> | </span>
@@ -31,8 +30,10 @@
     <span> | </span>
     <a href="{% url 'post_create' %}">Add post</a>
     <span> | </span>
-    <a href="{% url 'album_create' %}">Add album</a>
+    <a href="{% url 'albums_create' %}">Add album</a>
     <span> | </span>
+    {% block content %}
+    
     {% endblock %}
 </body>
 </html>
