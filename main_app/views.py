@@ -7,11 +7,27 @@ from django.views.generic import DetailView
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 
 class Home(TemplateView):
     template_name = 'home.html'
+
+def signup_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            print('HEY', user.username)
+            return HttpResponseRedirect('/user/'+str(user))
+        else:
+            return render(request, 'signup.html', {'form': form})
+    else:
+        form = UserCreationForm()
+        return render(request, 'signup.html', {'form': form})
 
 class PostDetail(DetailView):
     model = Post
