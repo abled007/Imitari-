@@ -1,8 +1,9 @@
-body {
-    background-color: black;
-    color: white;
-    font-size: 25px;
-  }
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: black;
+        color: white;
+        font-size: 25px;
+      }
   
   a {
       text-decoration: none;
@@ -99,7 +100,6 @@ body {
     justify-content: space-around;
    }
 
-   
    .gg-math-plus,
    .gg-math-plus::after {
        display: block;
@@ -125,9 +125,12 @@ body {
         left: 7px
     } 
 
+    img {
+        width: 30%;
+        border-radius: 10%;
+    }
 
-    @media screen and (min-width: 600px) {
-        .nav-bottom {
-        display: none;
-        }
-      }
+
+
+}
+
