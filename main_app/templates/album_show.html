@@ -1,6 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<nav class="navbar">
+    <form class="container-fluid">
+        <a class="gg-arrow-left-r" href="{% url 'post_list' %}"></a>
+        <div class="search">
+            <input type="text" name="title" placeholder="search"/>
+        </div>
+        <a class="gg-user" href='/user/{{post.user.username}}'></a>
+        <div> 
+            <a class="gg-math-plus" href="{% url 'post_create' %}"></a>
+        </div>
+    </form>
+</nav>
 <h1>Album Details</h1>
 
 <div>
