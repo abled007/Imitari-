@@ -1,4 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Home</h1>
+    <form>
+      <a type="submit" href="{% url 'login' %}">Login</button>
+    </form>
+    <form>
+      <a type="submit" href="{% url 'signup' %}">Sign up</button>
+    </form>
 {% endblock %}
