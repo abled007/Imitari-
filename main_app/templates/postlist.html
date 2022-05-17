@@ -2,11 +2,10 @@
 {% block content %}
 <nav>
     <form>
-        <div>
-            <input type="text" name="title" placeholder="name"/>
-            <input type="submit" value="Search"/>
+        <div class="search">
+            <input type="text" name="title" placeholder="search"/>
         </div>
-        <a href="{% url 'post_list' %}">Clear Search</a>
+        <a href="{% url 'post_list' %}">back</a>
     </form>
 </nav>
 

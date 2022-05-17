@@ -1,11 +1,14 @@
 body {
     padding: 25px;
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
     font-size: 25px;
   }
   
-  .dark-mode {
-    background-color: black;
-    color: white;
+  .search {
+      opacity: 0.2;
+  }
+
+  a {
+      text-decoration: none;
   }

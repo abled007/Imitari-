@@ -12,15 +12,8 @@
     <title>Imitari</title>
 </head>
 <body>
-
-<script>
-    function myFunction() {
-       let element = document.body;
-       element.classList.toggle("dark-mode");
-    }
-</script>
    
-    {% if user.is_authenticated %}
+    <!-- {% if user.is_authenticated %}
     <span><a href="{% url 'profile' user.username %}">Hello, {{ user.username }}!</a></span>
     <span> | </span>
     <span><a href="{% url 'logout' %}">Logout</a></span>
@@ -29,8 +22,8 @@
     <span><a href="{% url 'login' %}">Login</a></span>
     <span> | </span>
     <span><a href="{% url 'signup' %}">SignUp</a></span>
-    {% endif %}
-    <button onclick="myFunction()">dark mode</button>
+    {% endif %} -->
+
     <!-- <a href="/admin">Admin</a>
     <span> | </span>
     <a href="/">Home</a>
