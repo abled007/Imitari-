@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-<nav>
+<nav class="nav">
     <form>
         <a class="gg-arrow-left-r" href="{% url 'post_list' %}"></a>
         <div class="search">
             <input type="text" name="title" placeholder="search"/>
         </div>
-        <a href='/user/{{post.user.username}}'>profile</a>
+        <a class="gg-user" href='/user/{{post.user.username}}'></a>
     </form>
 </nav>
 
@@ -21,7 +21,9 @@
 <a href='/user/{{post.user.username}}'>{{post.user.username}}</a>
 {% endfor %}
 
+<div class="fixed-bottom">
+    <a href="{% url 'post_create' %}">add post</a>
+</div>
 
-<a href="{% url 'post_create' %}">add post</a>
 
 {% endblock %}
